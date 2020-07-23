@@ -1,0 +1,10 @@
+.officersContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+.officer-card {
+    border: 2px dotted darkgoldenrod;
+    flex-basis: 21%;
+    padding: 1em;
+    margin: 0.5em;
+}
