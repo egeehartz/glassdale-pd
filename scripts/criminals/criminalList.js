@@ -1,13 +1,12 @@
 import {getCriminals, useCriminals} from './criminalProvider.js'
 import { criminalHTMLConverter } from './criminalHTML.js'
-import { crimeSelect } from '../convictions/convictionSelect.js'
 import { useCrimes } from '../convictions/convictionProvider.js'
 
 const contentTarget = document.querySelector(".criminalsContainer")
 const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("crimeSelected", (crimeSelectedEvent) => {
-        
+        //GOAL is to filter the displayed criminals by the crime that was chosen
 
 
     const crimeThatWasSelected = crimeSelectedEvent.detail.crimeId
@@ -15,12 +14,9 @@ eventHub.addEventListener("crimeSelected", (crimeSelectedEvent) => {
     const arrayOfCrimes = useCrimes()
     const foundCrimeObj = arrayOfCrimes.find(
         (crime) => { 
-
             return parseInt(crimeThatWasSelected) === crime.id
         }
     )
-
-    //foundCrimeObj.name
 
         const allCriminals = useCriminals()
         const filteredCriminals = allCriminals.filter(
@@ -31,11 +27,11 @@ eventHub.addEventListener("crimeSelected", (crimeSelectedEvent) => {
 render (filteredCriminals)
 
 
-})
+})  //end of addEventListener
 
 const render = (arrayOfCriminals) => {
     let criminalHTML = ""
-    filteredCriminals.forEach(criminal => {
+    arrayOfCriminals.forEach(criminal => {
         criminalHTML += criminalHTMLConverter(criminal)
     })
     
@@ -43,14 +39,10 @@ const render = (arrayOfCriminals) => {
     <h2>Glassdale Convicted Criminals</h2>
     <article class="criminalList">
     ${criminalHTML}
-    </article>`
-    
- /*   let criminalHTMLRepresentation = ""
-    arrayOfCriminals.forEach(criminal => {
-        criminalHTMLRepresentation += criminalHTMLConverter(criminal)
-    }) 
-contentTarget.innerHTML = criminalHTMLRepresentation 
-} */
+    </article>
+    `
+
+} //end of render
 
 export const criminalList = () => {
     
