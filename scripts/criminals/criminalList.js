@@ -5,6 +5,24 @@ import { useCrimes } from '../convictions/convictionProvider.js'
 const contentTarget = document.querySelector(".criminalsContainer")
 const eventHub = document.querySelector(".container")
 
+eventHub.addEventListener("officerSelected", (officerSelectedEvent) => {
+    const officerThatWasSelected = officerSelectedEvent.detail.officerId
+
+    const allCriminals = useCriminals()
+    const filteredByOfficer = allCriminals.filter(
+        (currentCriminalObj) => {
+            if (currentCriminalObj.arrestingOfficer === officerThatWasSelected) {
+            return true
+            }
+            return false
+        }
+    )
+    render(filteredByOfficer)
+    
+})
+
+
+
 eventHub.addEventListener("crimeSelected", (crimeSelectedEvent) => {
         //GOAL is to filter the displayed criminals by the crime that was chosen
 
