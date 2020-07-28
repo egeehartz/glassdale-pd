@@ -4,7 +4,7 @@ import { criminalHTMLConverter } from '../criminals/criminalHTML.js'
 import { useCriminals } from "../criminals/criminalProvider.js"
 
 
-const contentTarget = document.querySelector(".offContainer")
+const contentTarget = document.querySelector(".criminalsContainer")
 const eventHub = document.querySelector(".container")
 
 eventHub.addEventListener("officerSelected", (officerSelectedEvent) => {
