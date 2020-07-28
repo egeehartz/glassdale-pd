@@ -1,2 +1,11 @@
 @import './criminals.css';
 @import './officers.css';
+
+
+.filters {
+    display:flex;
+}
+
+.filter {
+    margin: 0 .5rem;
+}
