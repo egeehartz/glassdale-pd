@@ -1,0 +1,11 @@
+#note--title, #note--author {
+    width: 30%;
+}
+
+#note--content {
+    width:50%;
+}
+
+#saveNote {
+    width:10%;
+}

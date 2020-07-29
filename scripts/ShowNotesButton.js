@@ -1,4 +1,6 @@
 const contentTarget = document.querySelector(".noteListButton")
+const eventHub = document.querySelector(".container")
+
 
 eventHub.addEventListener("click", clickEvent => {
     if(clickEvent.target.id === "showNotes") {
@@ -10,3 +12,4 @@ eventHub.addEventListener("click", clickEvent => {
 export const ShowNoteButton = () => {
         contentTarget.innerHTML="<button id='showNotes'>Show Notes</button>"
 }
+
