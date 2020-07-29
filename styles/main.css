@@ -9,3 +9,9 @@
 .filter {
     margin: 0 .5rem;
 }
+
+.lists {
+    display: flex;
+    flex-direction: row;
+}
+
