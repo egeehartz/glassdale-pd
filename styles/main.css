@@ -1,11 +1,41 @@
 @import './criminals.css';
 @import './officers.css';
-
+@import './notes.css';
+@import './form.css';
 
 .filters {
     display:flex;
+    margin: 1rem;
 }
 
 .filter {
     margin: 0 .5rem;
+}
+
+.lists {
+    display: flex;
+    flex-direction: row;
+}
+
+.criminalsContainer {
+    flex: 3;
+}
+
+.noteListContainer {
+    flex: 1;
+}
+
+.noteFormContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFFFE0;
+    padding: 20px 0;
+    margin: 0.5rem 0;
+
+}
+
+.noteListButton {
+    display: flex;
+    justify-content: flex-end;
 }

@@ -7,20 +7,18 @@ import {useOfficers, getOfficers} from "./officerProvider.js"
 const contentTarget = document.querySelector(".filters__officer")
 const eventHub = document.querySelector(".container")
 
-//contentTarget is listening for a change event (in this case, a user selecting from dropdown)
-contentTarget.addEventListener("change", (changeEvent) => {
-    const customEvent = new CustomEvent("officerSelected", {
-        detail: {
-            officerId: changeEvent.target.value
-        } //custom events must have an object with detail as a property
-        //detail's value must also be an object
-        //officerId was agreed upon as the name 
-    })
+//eventHub is listening for a change event (in this case, a user selecting from dropdown)
+eventHub.addEventListener("change", (changeEvent) => {
+        if(changeEvent.target.id === "officerSelect") {
+            const officerEvent = new CustomEvent("officerSelected", {
+                detail: {
+                    officerId: changeEvent.target.value
+                }  
+            })
+    eventHub.dispatchEvent(officerEvent) 
+        }
 
-    eventHub.dispatchEvent(customEvent) 
-    //exporting to the Hub aka .container
-    //customEvent because of line 10
-})
+    })
 
 
 //BUT WAIT. We gotta get the info first from our provider
@@ -32,7 +30,7 @@ const render = officerCollection => {
         ${
             officerCollection.map(
                 officerObj => {
-                    return `<option value="${officerObj.id}">${officerObj.name}</option>`
+                    return `<option value="${officerObj.name}">${officerObj.name}</option>`
                 }
             ).join("")
         }

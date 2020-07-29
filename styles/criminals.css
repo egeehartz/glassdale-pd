@@ -1,9 +1,10 @@
 
 .criminal-card {
-    border: 2px dotted black;
+    border: 2px solid black;
     flex-basis: 21%;
     padding: 1em;
     margin: 0.5em;
+    background-color: #d7effc;
 }
 .criminalList {
     display: flex;

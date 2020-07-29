@@ -1,0 +1,32 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "title": "note about felon",
+      "timestamp": "07/29/2020",
+      "author": "Suzie Police",
+      "content": "I think colonel mustard in the library with the candlestick"
+    },
+    {
+      "title": "hey",
+      "author": "hey",
+      "content": "heyyyy",
+      "timestamp": 1596039902923,
+      "id": 2
+    },
+    {
+      "title": "hey",
+      "author": "hey",
+      "content": "heyyyy",
+      "timestamp": 1596039904060,
+      "id": 3
+    },
+    {
+      "title": "hey",
+      "author": "hey",
+      "content": "heyyyy",
+      "timestamp": 1596039916786,
+      "id": 4
+    }
+  ]
+}
