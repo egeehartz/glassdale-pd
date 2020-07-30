@@ -1,11 +1,14 @@
 #note--title, #note--author {
     width: 30%;
+    margin: 10px;
 }
 
 #note--content {
     width:50%;
+    margin: 10px
 }
 
 #saveNote {
     width:10%;
+    margin: 10px;
 }
