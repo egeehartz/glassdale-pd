@@ -1,5 +1,5 @@
 import {saveNote} from "./NoteDataProvider.js"
-import { authorValidate } from "./NoteFormValidation.js"
+
 
 const contentTarget = document.querySelector(".noteFormContainer")
 const eventHub = document.querySelector(".container")
@@ -40,5 +40,4 @@ const render = () => {
 
 export const NoteForm = () => {
     render()
-    //authorValidate()
 }
