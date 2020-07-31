@@ -14,18 +14,18 @@ export const useNotes = () =>{
 
 
 export const getNotes = () => {
-    return fetch('http://localhost:8088/notes')
+    return fetch('http://localhost:3000/notes')
         .then(response => response.json())
         .then(parsedNotes => {
             notes = parsedNotes
         })
-
+debugger
 }
 
 export const saveNote = (note) => {
     const jsonNote = JSON.stringify(note)
 
-    return fetch('http://localhost:8088/notes', {
+    return fetch('http://localhost:3000/notes', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
