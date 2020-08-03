@@ -1,6 +1,7 @@
 import {getCriminals, useCriminals} from './criminalProvider.js'
 import { criminalHTMLConverter } from './criminalHTML.js'
 import { useCrimes } from '../convictions/convictionProvider.js'
+import { showInfo } from '../AlibiButton.js'
 
 const contentTarget = document.querySelector(".criminalsContainer")
 const eventHub = document.querySelector(".container")
@@ -21,21 +22,15 @@ eventHub.addEventListener("officerSelected", (officerSelectedEvent) => {
     
 })
 
-
-
 eventHub.addEventListener("crimeSelected", (crimeSelectedEvent) => {
         //GOAL is to filter the displayed criminals by the crime that was chosen
-
-
     const crimeThatWasSelected = crimeSelectedEvent.detail.crimeId
-
     const arrayOfCrimes = useCrimes()
     const foundCrimeObj = arrayOfCrimes.find(
         (crime) => { 
             return parseInt(crimeThatWasSelected) === crime.id
         }
     )
-
         const allCriminals = useCriminals()
         const filteredCriminals = allCriminals.filter(
             (currentCriminalObj) => {
@@ -43,9 +38,9 @@ eventHub.addEventListener("crimeSelected", (crimeSelectedEvent) => {
             }
         )
 render (filteredCriminals)
-
-
 })  //end of addEventListener
+
+
 
 const render = (arrayOfCriminals) => {
     let criminalHTML = ""
@@ -70,5 +65,6 @@ export const criminalList = () => {
             render(criminalArray)
             
     })
+    .then(showInfo)
 
 }
