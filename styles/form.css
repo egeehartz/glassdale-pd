@@ -1,14 +1,25 @@
 #note--title, #note--author {
-    width: 30%;
+    width: 47%;
     margin: 10px;
 }
 
 #note--content {
-    width:50%;
+    width:100%;
     margin: 10px
 }
 
 #saveNote {
-    width:10%;
+    width:41%;
     margin: 10px;
+}
+.noteFormContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FFFFE0;
+    padding: 2rem 9rem;
+    width: fit-content;
+    margin: auto;
+    box-shadow: 1px 0px 11px linen;
+    border-radius: 14%;
 }

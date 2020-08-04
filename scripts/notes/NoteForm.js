@@ -30,7 +30,7 @@ const render = () => {
         <input type="text" placeholder="Enter Title Here" id="note--title" />
         
        
-        <input type="text" placeholder="Your name here" id="note--author"  />
+        <input type="text" placeholder="Your name Here" id="note--author"  />
         
         
         <textarea type="text" placeholder="text" id="note--content"></textarea>

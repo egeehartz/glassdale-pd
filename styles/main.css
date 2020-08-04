@@ -3,6 +3,16 @@
 @import './notes.css';
 @import './form.css';
 
+body {
+    background-image: url(../images/sharon-mccutcheon-WqPAETBU2G8-unsplash.jpg);
+}
+h2 {
+    color:#d7effc;
+    box-shadow: 1px 0px 7px linen;
+    width: fit-content;
+    padding: 0 1rem;
+
+}
 .filters {
     display:flex;
     margin: 1rem;
@@ -23,16 +33,6 @@
 
 .noteListContainer {
     flex: 1;
-}
-
-.noteFormContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #FFFFE0;
-    padding: 20px 0;
-    margin: 0.5rem 0;
-
 }
 
 .noteListButton {

@@ -8,15 +8,15 @@ export const criminalHTMLConverter = (criminalObj) => {
         <div>Term end: ${new Date(criminalObj.incarceration.end).toLocaleDateString('en-US')}</div>
         <button id="associates--${criminalObj.id}">Associate Alibis</button>
         <dialog class="knownAssociates--${criminalObj.id}">
+        <button id="closeButton">x</button>
         ${
             criminalObj.known_associates.map(
                 associateObj => {
-                    return `<div>${associateObj.name}</div>
+                    return `<h4>${associateObj.name}</h4>
                     <div>${associateObj.alibi}</div>`
                 }
             ).join("")
         }
-        <button id="closeButton">x</button>
         </dialog>
         </section>
         

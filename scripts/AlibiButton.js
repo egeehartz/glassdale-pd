@@ -8,6 +8,10 @@ export const showInfo = () => {
             const contentTarget = document.querySelector(`.knownAssociates--${classArrayIndexOne}`)
             contentTarget.showModal()
         }
+        else if (clickEvent.target.id === "closeButton") {
+            const theDialog = clickEvent.target.parentNode
+            theDialog.close()
+        }
 
     })
 
