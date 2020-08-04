@@ -1,12 +1,14 @@
 
 .criminal-card {
-    border: 2px solid black;
+   /* border: 2px solid black; */
     flex-basis: 21%;
     padding: 1em;
     margin: 0.5em;
     background-color: #d7effc;
+    box-shadow: 1px 0px 11px linen;
 }
 .criminalList {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }

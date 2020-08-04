@@ -4,10 +4,17 @@ import {noteHTMLConverter} from "./Note.js"
 const contentTarget = document.querySelector(".noteListContainer")
 const eventHub = document.querySelector(".container")
 
+eventHub.addEventListener("noteStateChanged", () => {
+    const updatedNotes = useNotes()
+    render(updatedNotes)
+})
+
 eventHub.addEventListener("showNotesClicked", customEvent => {
     NoteList()
 })
-
+eventHub.addEventListener("hideNotesClicked", customEvent => {
+    contentTarget.innerHTML = ``
+})
 
 
 
