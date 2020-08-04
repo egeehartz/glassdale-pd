@@ -4,7 +4,6 @@ const eventHub = document.querySelector(".container")
 
 const dispatchStateChangeEvent = () => {
     const noteStateChangedEvent = new CustomEvent("noteStateChanged")
-
     eventHub.dispatchEvent(noteStateChangedEvent)
 }
 
@@ -19,7 +18,7 @@ export const getNotes = () => {
         .then(parsedNotes => {
             notes = parsedNotes
         })
-debugger
+
 }
 
 export const saveNote = (note) => {
