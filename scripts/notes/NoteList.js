@@ -1,5 +1,6 @@
 import {getNotes,useNotes} from "./NoteDataProvider.js"
 import {noteHTMLConverter} from "./Note.js"
+import {getCriminals, useCriminals} from "../criminals/criminalProvider.js"
 
 const contentTarget = document.querySelector(".noteListContainer")
 const eventHub = document.querySelector(".container")
@@ -20,17 +21,23 @@ eventHub.addEventListener("hideNotesClicked", customEvent => {
 
 export const NoteList = () => {
     getNotes()
-    .then(() => {
-        const allNotes = useNotes()
-        render(allNotes)
+        .then(getCriminals)
+        .then(() => {
+            const allNotes = useNotes()
+            const allCriminals = useCriminals()
+        render(allNotes, allCriminals)
     })
 }
 
 
-const render = (noteArray) => {
+const render = (noteArray, criminalArray) => {
     const allNotesHTML = noteArray.map(
         (currentNote) => {
-            return noteHTMLConverter(currentNote)
+            const criminalVar = criminalArray.find(criminal => {
+                return criminal.id === currentNote.criminalId
+            })
+
+            return noteHTMLConverter(currentNote, criminalVar)
         }
     ).join("")
 

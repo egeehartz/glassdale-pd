@@ -1,67 +1,13 @@
 {
   "notes": [
     {
-      "id": 1,
-      "title": "note about felon",
-      "timestamp": "07/29/2020",
-      "author": "Suzie Police",
-      "content": "I think colonel mustard in the library with the candlestick"
-    },
-    {
-      "title": "Cecile Carter",
-      "author": "eh",
-      "content": "Rosemary Schamberger\nwalking my dog",
-      "timestamp": 1596482949006,
-      "id": 12
-    },
-    {
-      "title": "Ashlynn Buckridge",
-      "author": "eh",
-      "content": "Chasity Klocko\nwalking my dog",
-      "timestamp": 1596483052228,
-      "id": 13
-    },
-    {
-      "title": "Clair Romeguera",
-      "author": "eh",
-      "content": "Wilber Gleason\ncleaning the chair\nFlorence Adams\ndisposing of body bags\nSonia Heller\nplaying squash\nLoyal Ward\ntest driving a car\nHailey Treutel\nshredding paper",
-      "timestamp": 1596483104649,
-      "id": 14
-    },
-    {
-      "title": "Arnulfo Daniel",
-      "author": "eh",
-      "content": "Nedra Huel\nwalking my dog",
-      "timestamp": 1596483346231,
-      "id": 15
-    },
-    {
-      "title": "Cecile Carter",
-      "author": "eh",
-      "content": "Rosemary Schamberger\nwalking my dog",
-      "timestamp": 1596483419786,
-      "id": 16
-    },
-    {
-      "title": "Mariah More",
-      "author": "eh",
-      "content": "Claire Maggio\nwalking my dog",
-      "timestamp": 1596483455972,
-      "id": 17
-    },
-    {
-      "title": "Katlyn Grady",
-      "author": "eh",
-      "content": "Ahmed Graham\nwalking my dog",
-      "timestamp": 1596483510102,
-      "id": 18
-    },
-    {
-      "title": "Abelardo",
-      "author": "eh",
-      "content": "Leopold Zemlak\nselling a car to a police officer",
-      "timestamp": 1596483694280,
-      "id": 19
+      "notes": [
+        {
+            "id": 1,
+            "noteText": "This is a possible suspect because she was not incarcerated at the time and had a motive.",
+            "criminalId": 5
+        }
+    ]
     }
   ]
 }
