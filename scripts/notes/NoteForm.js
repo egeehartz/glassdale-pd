@@ -1,5 +1,5 @@
 import {saveNote} from "./NoteDataProvider.js"
-import { useCriminals } from "../criminals/criminalProvider.js"
+import { useCriminals, getCriminals } from "../criminals/criminalProvider.js"
 
 
 const contentTarget = document.querySelector(".noteFormContainer")
@@ -10,13 +10,16 @@ eventHub.addEventListener("click", clickEvent => {
         const noteTitle = document.querySelector("#note--title")
         const noteAuthor = document.querySelector("#note--author")
         const noteContent = document.querySelector("#note--content")
+
+        const noteCriminal = document.querySelector("#noteForm--criminal")
+        
         if(noteTitle.value === "" || noteAuthor.value === "" || noteContent.value === "") {
             alert("This field is required!")
         } else {
 
             const newNote = {
             title: noteTitle.value,
-            criminalId: selectedCriminalId,
+            criminalId: parseInt(noteCriminal.value),
             author: noteAuthor.value,
             content: noteContent.value,
             timestamp: Date.now()
@@ -38,7 +41,7 @@ const render = () => {
             <option value="0">Please select a criminal...</option>
                 ${
                     criminals.map(criminal => {
-                        return `<option value="criminal--${ criminal.id }">${ criminal.name }</option>`
+                        return `<option value="${ criminal.id }">${ criminal.name }</option>`
                     }).join("")
                 }
         </select>
@@ -53,5 +56,10 @@ const render = () => {
 }
 
 export const NoteForm = () => {
+    getCriminals()
+        .then(() => {
+            const criminals = useCriminals()
+            render(criminals)
+        })
     render()
 }
