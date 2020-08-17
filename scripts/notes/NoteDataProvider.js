@@ -21,6 +21,15 @@ export const getNotes = () => {
 
 }
 
+export const deleteNote = (noteId) => {
+    return fetch(`http://localhost:3000/notes/${noteId}`, {
+        method: "DELETE",
+    })
+        .then(getNotes)
+        .then(dispatchStateChangeEvent)
+}
+
+
 export const saveNote = (note) => {
     const jsonNote = JSON.stringify(note)
 
