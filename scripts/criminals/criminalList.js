@@ -2,6 +2,9 @@ import {getCriminals, useCriminals} from './criminalProvider.js'
 import { criminalHTMLConverter } from './criminalHTML.js'
 import { useCrimes } from '../convictions/convictionProvider.js'
 import { showInfo } from '../AlibiButton.js'
+import { getCriminalFacilities, useCriminalFacilities } from './CriminalFacilityProvider.js'
+import { useFacilities } from './FacilityProvider.js'
+import {getFacilities} from './FacilityProvider.js'
 
 const contentTarget = document.querySelector(".criminalsContainer")
 const eventHub = document.querySelector(".container")
@@ -42,27 +45,34 @@ render (filteredCriminals)
 
 
 
-const render = (arrayOfCriminals) => {
-    let criminalHTML = ""
-    arrayOfCriminals.forEach(criminal => {
-        criminalHTML += criminalHTMLConverter(criminal)
-    })
-    
-    contentTarget.innerHTML = `
-    <h2>Glassdale Convicted Criminals</h2>
-    <article class="criminalList">
-    ${criminalHTML}
-    </article>
-    `
+const render = (arrayOfCriminals, crimFacArray, facilityArray) => {
+    const rep = arrayOfCriminals.map( criminal => {
+        const facilityForCriminal = crimFacArray.filter(cf => {
+            return cf.criminalId === criminal.id
+        })
+
+        const facilities = facilityForCriminal.map(cf => {
+            const matchingFacility = facilityArray.find(facility => {
+                return facility.id === cf.facilityId
+            })
+            return matchingFacility
+        })
+        return criminalHTMLConverter(criminal, facilities)
+    }).join("")
+    contentTarget.innerHTML = rep
 
 } //end of render
 
 export const criminalList = () => {
     
     getCriminals()
+        .then(getFacilities)
+        .then(getCriminalFacilities)
         .then(() => {
             const criminalArray = useCriminals()
-            render(criminalArray)
+            const crimFacilities = useCriminalFacilities()
+            const facilities = useFacilities()
+            render(criminalArray, crimFacilities, facilities)
             
     })
     .then(showInfo)
